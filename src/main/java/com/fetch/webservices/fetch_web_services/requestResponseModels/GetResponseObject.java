@@ -1,7 +1,13 @@
 package com.fetch.webservices.fetch_web_services.requestResponseModels;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class GetResponseObject {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     Integer points;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     String message;
 
     public Integer getPoints() {

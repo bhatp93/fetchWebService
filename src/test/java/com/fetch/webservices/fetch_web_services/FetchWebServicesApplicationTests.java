@@ -3,7 +3,6 @@ package com.fetch.webservices.fetch_web_services;
 import com.fetch.webservices.fetch_web_services.repository.KeyValueDataManager;
 import com.fetch.webservices.fetch_web_services.requestResponseModels.Item;
 import com.fetch.webservices.fetch_web_services.requestResponseModels.Receipt;
-import com.fetch.webservices.fetch_web_services.service.PointsCalculationsService;
 
 
 import com.fetch.webservices.fetch_web_services.service.impl.PointsCalculationServiceImpl;
@@ -14,7 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Arrays;
 import java.time.LocalDate;
@@ -76,6 +74,8 @@ class FetchWebServicesApplicationTests {
 		Assertions.assertFalse(returnValue);
 	}
 
+
+	//We can add more unit tests for validation if needed.
 	@Test
 	public void GivenStubbedReceipt_whenValidateReceiptCalled_returnsTrueForValidReceipt(){
 		boolean returnValue = requestDataService.validateReceipt(testReceipt);

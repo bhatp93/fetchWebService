@@ -1,7 +1,4 @@
 package com.fetch.webservices.fetch_web_services.controllers;
-
-
-import com.fetch.webservices.fetch_web_services.Database.KeyValueDB;
 import com.fetch.webservices.fetch_web_services.requestResponseModels.*;
 import com.fetch.webservices.fetch_web_services.service.PointsCalculationsService;
 import com.fetch.webservices.fetch_web_services.service.RequestDataService;
@@ -43,12 +40,12 @@ public class ReceiptController {
     public ResponseEntity<GetResponseObject> getReceiptPoints(@PathVariable String id){
         GetResponseObject responseObject = new GetResponseObject();
         if(!requestDataService.isIdValid(id)){
-            responseObject.setMessage("description: no receipt found for that id");
+            responseObject.setMessage("no receipt found for that id");
             return new ResponseEntity<>(responseObject, HttpStatus.NOT_FOUND);
         }
         Integer points = requestDataService.getPoints(id);
         if(points == -1){
-            responseObject.setMessage("description: Server Error");
+            responseObject.setMessage("Server Error");
             return new ResponseEntity<>(responseObject, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
