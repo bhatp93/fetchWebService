@@ -10,5 +10,3 @@ The link between repository and controller is present under services.
 
 Unit test code is present in src/test/java/com/fetch/webservices.
 Can add more unit tests. 
-
-Controller code is present under controller repository under 
